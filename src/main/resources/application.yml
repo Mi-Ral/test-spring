@@ -1,0 +1,11 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5437/postgres12
+    username: postgres
+    password: postgres
+    database: postgres12
+    driverClassname: org.postgresql.Driver
