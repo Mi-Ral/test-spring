@@ -18,15 +18,14 @@ import java.util.UUID;
 public class OrderService {
 
     private final OrderRepo repository;
-    private final CustomerService customerService;
-    private final ProductService productService;
 
-    public void add(UUID productId, UUID customerId, long count) {
-        Product product = productService.getById(productId);
-        Customer customer = customerService.getById(customerId);
-        if (count <= 0) {
+    public void add(Product product, Customer customer, Long count) {
+        System.out.println("start");
+        if (count < 1) {
+            System.out.println("badCount");
             throw new BadOrderCountException();
         }
+        System.out.println("добавился заказ");
         Order order =  new Order(UUID.randomUUID(), customer.getId(), product.getId(), count, product.getCost() * count);
         repository.save(order);
     }

@@ -1,7 +1,9 @@
 package ru.shop.controller;
 
 import org.springframework.web.bind.annotation.*;
+import ru.shop.model.Customer;
 import ru.shop.model.Order;
+import ru.shop.model.Product;
 import ru.shop.service.OrderService;
 
 import java.util.List;
@@ -27,8 +29,8 @@ public class OrderController {
     }
 
     @PostMapping("/add")
-    public void add(UUID productId, UUID customerId, long count) {
-        service.add(productId, customerId, count);
+    public void add(Product product, Customer customer, Long count) {
+        service.add(product, customer, count);
     }
 
     @GetMapping("/customer/{customerId}")
