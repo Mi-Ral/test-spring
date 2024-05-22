@@ -18,3 +18,9 @@ create table if not exists orders(
     count       int  not null,
     amount      int  not null
 );
+
+create table if not exists product_return(
+    id          uuid primary key,
+    order_id    uuid not null,
+    "date"      timestamp not null,
+    quantity    int not null)

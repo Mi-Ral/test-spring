@@ -12,7 +12,7 @@ import ru.shop.repository.OrderRepo;
 
 import java.util.UUID;
 
-public class OrderServiceTest {
+class OrderServiceTest {
     private final OrderRepo orderRepository = Mockito.mock();
     private final OrderService orderService = new OrderService(orderRepository);
 
